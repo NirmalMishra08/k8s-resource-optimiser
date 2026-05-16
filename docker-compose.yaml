@@ -1,0 +1,26 @@
+services:
+
+  optimizer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    platform: linux/arm64
+
+    container_name: optimizer-service
+
+    ports:
+      - "8080:8080"
+
+  prometheus:
+    image: prom/prometheus:latest
+
+    platform: linux/arm64
+
+    container_name: prometheus
+
+    ports:
+      - "9090:9090"
+
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml

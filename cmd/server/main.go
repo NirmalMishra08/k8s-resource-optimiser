@@ -1,4 +1,4 @@
-package server
+package main
 
 import (
 	"k8s-resource-optimizer/internal/handler"
